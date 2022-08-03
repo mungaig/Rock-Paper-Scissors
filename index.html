@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <h1>Rock Paper Scissors</h1>
+    <script>
+        function getComputerChoice(){
+            let choice = ['rock', 'paper', 'scissors'];
+            let computerChoice = choice[Math.floor(Math.random() * choice.length)];
+            return computerChoice;
+        }
+
+        let playerSelection = prompt('Rock Paper Scissors').toLowerCase();
+        console.log(playerSelection);
+
+        
+        
+
+    </script>
+</body>
+</html>
