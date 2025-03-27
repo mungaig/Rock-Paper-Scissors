@@ -37,15 +37,15 @@
     
     function playGame(){
         buttons.forEach((button) => {
-        button.addEventListener('click', () => {
-            const playerChoice = button.id;
-            playerSelection = playerChoice;
-            computerSelection = getComputerChoice();
-            playRound(playerSelection, computerSelection);
-            console.log(`Computer Score: ${computerScore}`);
-            console.log(`Player Score: ${playerScore}`);
-            checkGame();
-        });
+            button.addEventListener('click', () => {
+                const playerChoice = button.id;
+                playerSelection = playerChoice;
+                computerSelection = getComputerChoice();
+                playRound(playerSelection, computerSelection);
+                console.log(`Computer Score: ${computerScore}`);
+                console.log(`Player Score: ${playerScore}`);
+                checkGame();
+            });
         });
     }
 
@@ -58,11 +58,27 @@
                 button.disabled = true;
             });
             if(playerScore > computerScore){
-                console.log('Congratulations: You win the game');
+                console.log('Congratulations: You win the game!');
             } else {
                 console.log('Sorry: Computer wins, better luck next time')
             }
+            resetGame();
         }
+    }
+
+    function resetGame(){     
+        const resetBtn = document.createElement('button');
+        resetBtn.innerText = 'Play Again';
+        document.body.appendChild(resetBtn);
+
+        resetBtn.addEventListener('click', () => {
+                buttons.forEach((button) => {
+                button.disabled = false;
+                playerScore = 0;
+                computerScore = 0;
+                resetBtn.remove();
+            });        
+        });
     }
     
    playGame(); 
