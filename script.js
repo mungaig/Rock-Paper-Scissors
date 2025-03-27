@@ -1,7 +1,7 @@
 
     let playerScore = 0;
     let computerScore = 0;
-    let roundScore = 0;
+    const buttons = document.querySelectorAll('button');
 
     function getComputerChoice(){
         let choiceList = ['rock', 'paper', 'scissors'];
@@ -35,18 +35,34 @@
         }    
     }
     
-
-    const buttons = document.querySelectorAll('button');
+    function playGame(){
         buttons.forEach((button) => {
-            button.addEventListener('click', () => {
-                const playerChoice = button.id;
-                playerSelection = playerChoice;
-                computerSelection = getComputerChoice();
-                playRound(playerSelection, computerSelection);
-                console.log(`Computer Score: ${computerScore}`);
-                console.log(`Player Score: ${playerScore}`);
-            });
+        button.addEventListener('click', () => {
+            const playerChoice = button.id;
+            playerSelection = playerChoice;
+            computerSelection = getComputerChoice();
+            playRound(playerSelection, computerSelection);
+            console.log(`Computer Score: ${computerScore}`);
+            console.log(`Player Score: ${playerScore}`);
+            checkGame();
         });
+        });
+    }
 
-
+    function checkGame(){
+        let gameIsOver = false;
+        if(playerScore === 5 || computerScore === 5){
+            gameIsOver = true;
+            console.log('Game Over!!!');
+            buttons.forEach((button) => {
+                button.disabled = true;
+            });
+            if(playerScore > computerScore){
+                console.log('Congratulations: You win the game');
+            } else {
+                console.log('Sorry: Computer wins, better luck next time')
+            }
+        }
+    }
     
+   playGame(); 
