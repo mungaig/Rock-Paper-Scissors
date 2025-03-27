@@ -34,21 +34,66 @@
         }           
     }
 
-    function game(){
-    //for(let i = 0; i < 5; i++){
-    //const playerSelection = prompt('Rock Paper Scissors').toLowerCase();
-    const computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection);
-    //}
-    console.log('You: ' + playerScore);
-    console.log('Computer: ' + computerScore);
-    if(playerScore > computerScore){
-        console.log('Congratulations: You win the game!!');
-    }else if(computerScore > playerScore){
-        console.log('Computer wins the game!');
-    }else{
-        console.log('Game ends in a draw');
-    }
-    }   
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            const playerChoice = button.id;
+            playerSelection = playerChoice;
+            computerSelection = getComputerChoice();
+            playRound(playerSelection, computerSelection);
+        });
+    });
 
-    game();
+
+       
+    
+
+    // function game(){
+    // for(let i = 0; i < 5; i++){
+    // const playerSelection = prompt('Rock Paper Scissors').toLowerCase();
+    // const computerSelection = getComputerChoice();
+    // playRound(playerSelection, computerSelection);
+    // //}
+    // console.log('You: ' + playerScore);
+    // console.log('Computer: ' + computerScore);
+    // if(playerScore > computerScore){
+    //     console.log('Congratulations: You win the game!!');
+    // }else if(computerScore > playerScore){
+    //     console.log('Computer wins the game!');
+    // }else{
+    //     console.log('Game ends in a draw');
+    // }
+    // }   
+
+    // game();
+    // function getPlayerChoice(){
+    //     let playerChoice;
+
+    //     const rock = document.querySelector('#rock');
+    //     const paper = document.querySelector('#paper');
+    //     const scissors = document.querySelector('#scissors');
+
+    //     rock.addEventListener('click', () => {
+    //         playerChoice = rock.id;
+    //         return playerChoice;
+    //     });
+
+    //     paper.addEventListener('click', () => {
+    //         playerChoice = paper.id;
+    //         return playerChoice;
+    //     });
+
+    //     scissors.addEventListener('click', () => {
+    //         playerChoice = scissors.id;
+    //         return playerChoice;
+    //     });
+    // }
+
+    // function game(){
+    //     const playerSelection = getPlayerChoice();
+    //     const computerSelection = getComputerChoice();
+    //     playRound(playerSelection, computerSelection);
+    // }
+
+
+    // game();
