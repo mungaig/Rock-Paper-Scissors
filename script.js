@@ -1,6 +1,7 @@
 
     let playerScore = 0;
     let computerScore = 0;
+    let roundScore = 0;
 
     function getComputerChoice(){
         let choiceList = ['rock', 'paper', 'scissors'];
@@ -31,69 +32,21 @@
         } else if(playerSelection === 'scissors' && computerSelection === 'paper'){
             console.log('You win! scissors beats paper');
             return playerScore += 1;
-        }           
+        }    
     }
-
-    const buttons = document.querySelectorAll('button');
-    buttons.forEach((button) => {
-        button.addEventListener('click', () => {
-            const playerChoice = button.id;
-            playerSelection = playerChoice;
-            computerSelection = getComputerChoice();
-            playRound(playerSelection, computerSelection);
-        });
-    });
-
-
-       
     
 
-    // function game(){
-    // for(let i = 0; i < 5; i++){
-    // const playerSelection = prompt('Rock Paper Scissors').toLowerCase();
-    // const computerSelection = getComputerChoice();
-    // playRound(playerSelection, computerSelection);
-    // //}
-    // console.log('You: ' + playerScore);
-    // console.log('Computer: ' + computerScore);
-    // if(playerScore > computerScore){
-    //     console.log('Congratulations: You win the game!!');
-    // }else if(computerScore > playerScore){
-    //     console.log('Computer wins the game!');
-    // }else{
-    //     console.log('Game ends in a draw');
-    // }
-    // }   
-
-    // game();
-    // function getPlayerChoice(){
-    //     let playerChoice;
-
-    //     const rock = document.querySelector('#rock');
-    //     const paper = document.querySelector('#paper');
-    //     const scissors = document.querySelector('#scissors');
-
-    //     rock.addEventListener('click', () => {
-    //         playerChoice = rock.id;
-    //         return playerChoice;
-    //     });
-
-    //     paper.addEventListener('click', () => {
-    //         playerChoice = paper.id;
-    //         return playerChoice;
-    //     });
-
-    //     scissors.addEventListener('click', () => {
-    //         playerChoice = scissors.id;
-    //         return playerChoice;
-    //     });
-    // }
-
-    // function game(){
-    //     const playerSelection = getPlayerChoice();
-    //     const computerSelection = getComputerChoice();
-    //     playRound(playerSelection, computerSelection);
-    // }
+    const buttons = document.querySelectorAll('button');
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => {
+                const playerChoice = button.id;
+                playerSelection = playerChoice;
+                computerSelection = getComputerChoice();
+                playRound(playerSelection, computerSelection);
+                console.log(`Computer Score: ${computerScore}`);
+                console.log(`Player Score: ${playerScore}`);
+            });
+        });
 
 
-    // game();
+    
