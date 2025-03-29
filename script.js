@@ -91,7 +91,9 @@
                 computerChoice.textContent = '';
                 gameWinner.textContent = '';
                 computerScr.textContent = '';
-                playerScr.textContent = '';                
+                playerScr.textContent = ''; 
+                roundWinner.textContent= '';
+                gameWinner.textContent = '';               
                 resetBtn.remove(); 
             });        
         });

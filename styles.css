@@ -84,4 +84,14 @@ button:hover{
     background-color: #261FB3;
     color: #FFF;
     width: auto;
+    font-weight: bold;
+}
+
+#game-winner{
+    color: #7D0A0A;
+}
+
+#round-winner{
+    font-weight: bold;
+    color: #4F1C51;
 }
