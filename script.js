@@ -1,4 +1,4 @@
-    //DOM 
+    //DOM targets
     const container = document.querySelector('#container');
     const playerChoice = document.querySelector('#player-choice');
     const computerChoice = document.querySelector('#computer-choice');
@@ -6,11 +6,11 @@
     const gameWinner = document.querySelector('#game-winner');
     const computerScr = document.querySelector('#computer-score');
     const playerScr = document.querySelector('#player-score');  
+    const buttons = document.querySelectorAll('button');
     
     //Play logic
     let playerScore = 0;
-    let computerScore = 0;
-    const buttons = document.querySelectorAll('button');
+    let computerScore = 0;  
 
     function getComputerChoice(){
         let choiceList = ['rock', 'paper', 'scissors'];
@@ -31,7 +31,7 @@
             roundWinner.textContent = 'You lose! scissors beats paper';
             return computerScore += 1;  
         } else if(playerSelection === 'scissors' && computerSelection === 'rock'){
-            roundWinner.textContent = 'You lose! You lose rock beats scissors';
+            roundWinner.textContent = 'You lose! rock beats scissors';
             return computerScore += 1;
         } else if(playerSelection === 'rock' && computerSelection === 'scissors'){
             roundWinner.textContent = 'You win! rock beats scissors';
