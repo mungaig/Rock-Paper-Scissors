@@ -69,8 +69,11 @@
             });
             if(playerScore > computerScore){
                 console.log('Congratulations: You win the game!');
+                const gameWinner = document.querySelector('#game-winner');
+                gameWinner.textContent = 'Congratulations: You win the game!';
             } else {
-                console.log('Sorry: Computer wins, better luck next time')
+                console.log('Computer wins! better luck next time');
+                gameWinner.textContent = 'Computer wins! better luck next time';
             }
             resetGame();
         }
@@ -87,9 +90,9 @@
                 button.disabled = false;
                 playerScore = 0;
                 computerScore = 0;
-                resetBtn.remove(); 
                 computerScr.textContent = '';
                 playerScr.textContent = '';
+                resetBtn.remove(); 
             });        
         });
     }
