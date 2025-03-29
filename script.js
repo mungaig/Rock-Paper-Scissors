@@ -1,7 +1,11 @@
     //DOM 
     const container = document.querySelector('#container');
+    const playerChoice = document.querySelector('#player-choice');
+    const computerChoice = document.querySelector('#computer-choice');
+    const roundWinner = document.querySelector('#round-winner');
+    const gameWinner = document.querySelector('#game-winner');
     const computerScr = document.querySelector('#computer-score');
-    const playerScr = document.querySelector('#player-score');
+    const playerScr = document.querySelector('#player-score');  
     
     //Play logic
     let playerScore = 0;
@@ -15,10 +19,6 @@
     }     
     
     function playRound(playerSelection, computerSelection){
-        const playerChoice = document.querySelector('#player-choice');
-        const computerChoice = document.querySelector('#computer-choice');
-        const roundWinner = document.querySelector('#round-winner');
-
         playerChoice.textContent = `You: ${playerSelection}`;       
         computerChoice.textContent = `Computer: ${computerSelection}`;
 
@@ -68,11 +68,8 @@
                 button.disabled = true;
             });
             if(playerScore > computerScore){
-                console.log('Congratulations: You win the game!');
-                const gameWinner = document.querySelector('#game-winner');
                 gameWinner.textContent = 'Congratulations: You win the game!';
             } else {
-                console.log('Computer wins! better luck next time');
                 gameWinner.textContent = 'Computer wins! better luck next time';
             }
             resetGame();
@@ -90,8 +87,11 @@
                 button.disabled = false;
                 playerScore = 0;
                 computerScore = 0;
+                playerChoice.textContent = '';
+                computerChoice.textContent = '';
+                gameWinner.textContent = '';
                 computerScr.textContent = '';
-                playerScr.textContent = '';
+                playerScr.textContent = '';                
                 resetBtn.remove(); 
             });        
         });
