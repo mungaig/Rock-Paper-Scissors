@@ -1,0 +1,87 @@
+*{
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+body {
+    background-color: #27548A;
+}
+
+#container {
+    background-color: #F5EEDC;
+    height: 80vh;
+    width: 50%;
+    margin: auto;
+    margin-top: 10vh;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    padding-top: 10px;
+    color: #183B4E;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 35px;
+}
+
+p{
+    line-height: 1;
+}
+
+button{
+    width: 100px;
+    margin: 0 30px;
+    padding: 20px;
+    background-color: #E69DB8;
+    border-radius: 8%;
+}
+
+button i {
+    font-size: 40px;
+    padding-bottom: 10px;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: #88304E;
+    color: #FFF;
+}
+
+#btndiv{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+#results{
+    width: 80%;
+    height: 20vh;
+    margin: 15px auto;
+}
+
+#score{
+    margin: auto;
+    width: 30%;
+    background-color: #FBE4D6;
+    margin-top: 15px;
+    border-radius: 10%;
+    border: 1px dotted #210F37;
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#score span{
+    color: #F7374F;
+}
+
+.reset-btn{
+    margin: auto;
+    background-color: #261FB3;
+    color: #FFF;
+    width: auto;
+}
