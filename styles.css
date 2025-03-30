@@ -9,7 +9,7 @@ body {
 
 #container {
     background-color: #F5EEDC;
-    height: 90vh;
+    height: auto;
     width: 50%;
     margin: auto;
     margin-top: 5vh;
@@ -67,10 +67,9 @@ button:disabled{
 }
 
 #score{
-    margin: auto;
+    margin: 10px auto;
     width: 30%;
     background-color: #FBE4D6;
-    margin-top: 15px;
     border-radius: 10%;
     border: 1px dotted #210F37;
     display: flex;
@@ -84,7 +83,7 @@ button:disabled{
 }
 
 .reset-btn{
-    margin: auto;
+    margin: 20px auto;
     background-color: #261FB3;
     color: #FFF;
     width: auto;
